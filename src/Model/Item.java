@@ -38,7 +38,7 @@ public class Item {
     public String toString() {
         int hargaTotal = total * Integer.parseInt(jumlah);
         String mataUang = String.format(String.valueOf(hargaTotal)).replaceAll(",",".")+",00";
-        String output = "[ " + this.idPesanan + " ] "  + this.pilihanUser + ", harga = Rp. " + mataUang + ", dengan jumlah pesanan = " + this.jumlah + "\n" ;
+        String output = "Menu = "  + this.pilihanUser + ", harga = Rp. " + mataUang + ", dengan jumlah pesanan = " + this.jumlah + "\n" ;
         return output;
     }
 }

@@ -2,8 +2,10 @@ package Menu;
 
 import Model.Item;
 import Services.kasirService;
+import Services.paketService;
 import Services.receiptService;
 import repository.ItemRepository;
+import repository.paketRepository;
 import repository.receiptRepository;
 
 import java.util.Scanner;
@@ -11,16 +13,11 @@ import java.util.Scanner;
 public class MainMenu {
     private static kasirService<Item, Integer> kasirService = new ItemRepository();
     private static receiptService  receipt = new receiptRepository();
+    private static paketService paket = new paketRepository();
     private static Scanner sc = new Scanner(System.in);
     public static void MainMenu() {
-
-        System.out.println("Restoran Filbert");
-        System.out.println("================");
-        System.out.println("1. Menu");
-        System.out.println("2. Edit Pesanan");
-        System.out.println("3. Payment");
-        System.out.println("4. Exit");
-        System.out.println("================");
+        System.out.println(paket.Judul());
+        System.out.println(paket.MainMenu());
         System.out.println("Jawab = ");
         String input = sc.nextLine();
         if (input.equals("1")) {
@@ -40,14 +37,8 @@ public class MainMenu {
         }
     }
     public static void Menu() {
-
-        System.out.println("Restoran Filbert");
-        System.out.println("================");
-        System.out.println("1. Menu Paket");
-        System.out.println("2. Makanan Saja");
-        System.out.println("3. Minuman Saja");
-        System.out.println("4. Menu Utama");
-        System.out.println("================");
+        System.out.println(paket.Judul());
+        System.out.println(paket.Menu());
         System.out.println("Jawab = ");
         String input = sc.nextLine();
         if (input.equals("1")) {
@@ -72,13 +63,8 @@ public class MainMenu {
         String iyah = null;
         int total = 0;
         do {
-            System.out.println("Restoran Filbert");
-            System.out.println("================");
-            System.out.println("1. Menu Paket Ayam + Nasi = Rp. 30.000,00");
-            System.out.println("2. Menu Paket Bebek + Nasi = Rp. 35.000,00");
-            System.out.println("3. Menu Paket Sapi + Nasi = Rp. 40.000,00");
-            System.out.println("4. Kembali");
-            System.out.println("================");
+            System.out.println(paket.Judul());
+            System.out.println(paket.Paket());
             System.out.println("Jawab = ");
             String input = sc.nextLine();
             if (input.equals("1")){
@@ -136,13 +122,8 @@ public class MainMenu {
         int total = 0;
 
         do {
-            System.out.println("Restoran Filbert");
-            System.out.println("================");
-            System.out.println("1. Ayam Geprek = Rp. 15.000,00");
-            System.out.println("2. Bebek Goreng = Rp. 20.000,00");
-            System.out.println("3. Tempe Goreng = Rp. 5.000,00");
-            System.out.println("4. Kembali");
-            System.out.println("================");
+            System.out.println(paket.Judul());
+            System.out.println(paket.Makanan());
             System.out.println("Jawab = ");
             String input = sc.nextLine();
             if (input.equals("1")){
@@ -201,13 +182,8 @@ public class MainMenu {
         int total = 0;
 
         do {
-            System.out.println("Restoran Filbert");
-            System.out.println("================");
-            System.out.println("1. Es Teh Manis = Rp. 5.000,00");
-            System.out.println("2. Es Teh Tawar = Rp. 3.000,00");
-            System.out.println("3. Es Jeruk = Rp. 8.000,00");
-            System.out.println("4. Kembali");
-            System.out.println("================");
+            System.out.println(paket.Judul());
+            System.out.println(paket.Minuman());
             System.out.println("Jawab = ");
             String input = sc.nextLine();
             if (input.equals("1")){
@@ -259,20 +235,16 @@ public class MainMenu {
     }
     public static void Show(){
         for (int i = 0; i <= kasirService.index() ; i++){
-            System.out.println(kasirService.findById(i));
+            System.out.println(" [ " + i + " ] " + kasirService.findById(i));
         }
     }
     public static void Edit(){
         if (kasirService.size() > 0 ){
+            System.out.println(paket.Judul());
             System.out.println("====LIST PESANAN====");
             Show();
             System.out.println("====================");
-            System.out.println("Action yang ingin dilakukan ? ");
-            System.out.println("1. Tambah Pesanan ? ");
-            System.out.println("2. Edit Pesanan ? ");
-            System.out.println("3. Delete Pesanan ? ");
-            System.out.println("4. Payment ? ");
-            System.out.println("5. Kembali ? ");
+            System.out.println(paket.Edit());
             System.out.println("Jawab = [1,2,3,4,5] ");
             String input = sc.nextLine();
 
