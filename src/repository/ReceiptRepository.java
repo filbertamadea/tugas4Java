@@ -1,16 +1,15 @@
 package repository;
 
-import Services.receiptService;
-import java.time.LocalDate;
+import Services.ReceiptService;
+
 import java.time.LocalDateTime;
-import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 
-public class receiptRepository implements receiptService {
+public class ReceiptRepository implements ReceiptService {
     String nama;
     int total;
     @Override
-    public String Judul() {
+    public String judul() {
         String Judul = "RESTORAN FILBERT JAYA";
         return Judul;
     }
@@ -20,12 +19,12 @@ public class receiptRepository implements receiptService {
         return nama;
     }
     @Override
-    public String Nama() {
+    public String nama() {
         return nama;
     }
 
     @Override
-    public String Date() {
+    public String date() {
         LocalDateTime localDateTime = LocalDateTime.now();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("E, dd MMMM yyyy. HH:mm:ss");
         String dateTimeFormatted = localDateTime.format(formatter);

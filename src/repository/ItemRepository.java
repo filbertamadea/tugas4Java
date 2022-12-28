@@ -1,11 +1,11 @@
 package repository;
 
 import Model.Item;
-import Services.kasirService;
+import Services.KasirService;
 
 import java.util.ArrayList;
 
-public class ItemRepository implements kasirService<Item, Integer> {
+public class ItemRepository implements KasirService<Item, Integer> {
 
     ArrayList<Item> items = new ArrayList<>();
 

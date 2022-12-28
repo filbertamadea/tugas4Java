@@ -3,7 +3,7 @@ package Services;
 
 import java.util.ArrayList;
 
-public interface kasirService<T, K> {
+public interface KasirService<T, K> {
     ArrayList<T> findAll();
 
     T findById(K id);
