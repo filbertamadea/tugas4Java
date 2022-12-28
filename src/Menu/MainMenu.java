@@ -181,12 +181,12 @@ public class MainMenu {
             } else if (nanya.equals("tidak")) {
                 System.out.print("Tekan [Enter] untuk kembali..");
                 sc.nextLine();
-                Paket();
+                Makanan();
             } else {
                 System.out.println("Input Anda Salah");
                 System.out.print("Tekan [Enter] untuk kembali..");
                 sc.nextLine();
-                Paket();
+                Makanan();
             }
             System.out.println("Anda Ingin Menambah Pesanan ?");
             iyah = sc.nextLine();
@@ -245,12 +245,12 @@ public class MainMenu {
             } else if (nanya.equals("tidak")) {
                 System.out.print("Tekan [Enter] untuk kembali..");
                 sc.nextLine();
-                Paket();
+                Minuman();
             } else {
                 System.out.println("Input Anda Salah");
                 System.out.print("Tekan [Enter] untuk kembali..");
                 sc.nextLine();
-                Paket();
+                Minuman();
             }
             System.out.println("Anda Ingin Menambah Pesanan ?");
             iyah = sc.nextLine();
@@ -304,12 +304,12 @@ public class MainMenu {
         System.out.println("====LIST PESANAN====");
         Show();
         int buatBalik = kasirService.size() + 1;
-        System.out.println("[ " + buatBalik + " ] Kembali" );
+        System.out.println("[ " + "-" + " ] Kembali" );
         System.out.println("====================");
         System.out.println("Pilih pesanan yang ingin di edit / Kembali");
         String input = sc.nextLine();
 
-        if (input.equals(buatBalik)){
+        if (input.equals("-")){
             MainMenu();
         } else{
             int jumlahInput = kasirService.size() + 1;
@@ -337,6 +337,8 @@ public class MainMenu {
                         sc.nextLine();
                         EditPesanan();
                     }
+                } else if (input.equals("2")) {
+                    EditPesanan();
                 }
             } else {
                 System.out.println("Data Tidak Ada! ");
@@ -344,17 +346,18 @@ public class MainMenu {
                 sc.nextLine();
                 EditPesanan();
             }
+            EditPesanan();
         }
     }
     public static void DeletePesanan() {
         System.out.println("====LIST PESANAN====");
         Show();
         int buatBalik = kasirService.size() + 1;
-        System.out.println("[ " + buatBalik + " ] Kembali" );
+        System.out.println("[ " + "-" + " ] Kembali" );
         System.out.println("====================");
         System.out.println("Pilih pesanan yang ingin di Delete / Kembali");
         String input = sc.nextLine();
-        if (input.equals(buatBalik)){
+        if (input.equals("-")){
             MainMenu();
         } else {
             int jumlahInput = kasirService.size() + 1;
@@ -426,8 +429,8 @@ public class MainMenu {
             MainMenu();
         }
     }
-
     public static void Struk(){
+        System.out.println("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
         System.out.println(receipt.Judul());
         System.out.println("======================");
         System.out.println("Atas Nama = " + receipt.Nama());
